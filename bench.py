@@ -412,9 +412,9 @@ def generate_combined_graph(results: list[BenchResult], output_path: Path) -> No
     # Create figure
     _, ax = plt.subplots(figsize=(14, 8))
 
-    # Colors for each framework
-    colors = ["#8FBC8F", "#87CEEB", "#DDA0DD", "#F0E68C"]  # Green, Blue, Purple, Yellow
-    edge_colors = ["#6B8E6B", "#5F9EA0", "#BA55D3", "#BDB76B"]
+    # Colors for each framework (sorted by avg RPS: bolt, litestar, fastapi, ninja, drf)
+    colors = ["#FF6B35", "#87CEEB", "#DDA0DD", "#F0E68C", "#8FBC8F"]  # Orange, Blue, Purple, Yellow, Green
+    edge_colors = ["#CC5529", "#5F9EA0", "#BA55D3", "#BDB76B", "#6B8E6B"]
 
     # Bar settings
     n_frameworks = len(frameworks)
