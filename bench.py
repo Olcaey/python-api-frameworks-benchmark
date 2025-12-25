@@ -2,11 +2,12 @@
 """
 Framework Benchmark Runner
 
-Benchmarks 4 frameworks with 4 endpoints each using bombardier:
+Benchmarks 5 frameworks with 4 endpoints each using bombardier:
 - FastAPI
 - Litestar
 - Django Ninja
 - Django Bolt
+- Django REST Framework
 
 Endpoints:
 1. /json-1k  - ~1KB JSON response
@@ -64,6 +65,7 @@ FRAMEWORKS = {
     "litestar": {"port": 8002, "prefix": ""},
     "django-ninja": {"port": 8003, "prefix": "/ninja"},
     "django-bolt": {"port": 8004, "prefix": ""},
+    "django-drf": {"port": 8005, "prefix": "/drf"},
 }
 
 ENDPOINTS = [

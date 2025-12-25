@@ -22,6 +22,7 @@ INSTALLED_APPS = [
     "django.contrib.auth",
     "django_project.users",
     "django_bolt",
+    "rest_framework",
 ]
 
 MIDDLEWARE = []

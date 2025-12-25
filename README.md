@@ -1,19 +1,23 @@
-# Framework Benchmark
+# Python API Framework Benchmark (with Django REST Framework)
+
+> **Extended from:** [fastapi-vs-litestar-vs-django-bolt-vs-django-ninja-benchmarks](https://github.com/FarhanAliRaza/fastapi-vs-litestar-vs-django-bolt-vs-django-ninja-benchmarks)
+> **Addition:** Django REST Framework benchmarks added for comprehensive comparison
 
 ![Framework Benchmark](graphs/benchmark_combined.png)
 
-**[Django Bolt](https://github.com/FarhanAliRaza/django-bolt) wins across all endpoints**, showing significant performance gains especially for JSON serialization workloads.
+**[Django Bolt](https://github.com/FarhanAliRaza/django-bolt) wins across all endpoints**, showing significant performance gains especially for JSON serialization workloads. Django REST Framework shows the lowest performance in JSON endpoints but maintains competitive database query performance.
 
 > **Disclaimer:** This is an informal benchmark run on a local development machine without proper isolation. It does not follow benchmarking best practices such as Docker containerization, CPU pinning, or elimination of background process interference. Results may vary significantly in production environments. Take these numbers as a rough indicator, not absolute truth.
 
 ---
 
-Compares 4 Python web frameworks with identical endpoints:
+Compares 5 Python web frameworks with identical endpoints:
 
 - **[FastAPI](https://github.com/fastapi/fastapi)** - ASGI framework with Pydantic
 - **[Litestar](https://github.com/litestar-org/litestar)** - High-performance ASGI framework
 - **[Django Ninja](https://github.com/vitalik/django-ninja)** - Django + Pydantic API framework
 - **[Django Bolt](https://github.com/FarhanAliRaza/django-bolt)** - Rust-powered Django API framework
+- **[Django REST Framework](https://github.com/encode/django-rest-framework)** - Traditional Django REST API framework
 
 ## Endpoints
 
@@ -64,6 +68,7 @@ go install github.com/codesenberg/bombardier@latest
 ./run_litestar.sh  # Port 8002
 ./run_ninja.sh     # Port 8003
 ./run_bolt.sh      # Port 8004
+./run_drf.sh       # Port 8005
 ```
 
 ### 3. Run Benchmark
@@ -91,4 +96,5 @@ uv run python bench.py
 | Litestar     | 8002 |
 | Django Ninja | 8003 |
 | Django Bolt  | 8004 |
+| Django DRF   | 8005 |
 

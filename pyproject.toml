@@ -9,10 +9,11 @@ dependencies = [
     "uvicorn[standard]>=0.32.0",
     # Litestar
     "litestar[standard]>=2.19.0",
-    # Django + Django Ninja + Django Bolt
+    # Django + Django Ninja + Django Bolt + Django REST Framework
     "django>=5.0",
     "django-ninja>=1.5.1",
     "django-bolt==0.4.7",
+    "djangorestframework>=3.15.0",
     # Async SQLite for FastAPI ORM tests
     "sqlalchemy[asyncio]>=2.0.0",
     "aiosqlite>=0.20.0",

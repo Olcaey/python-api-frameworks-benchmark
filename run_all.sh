@@ -63,6 +63,11 @@ echo -e "${YELLOW}Starting Django Bolt on port 8004...${NC}"
 uv run python manage.py runbolt --host 0.0.0.0 --port 8004 --processes 1 &
 echo $! >> "$PID_FILE"
 
+# Start Django REST Framework
+echo -e "${YELLOW}Starting Django REST Framework on port 8005...${NC}"
+uv run uvicorn django_project.asgi:application --host 0.0.0.0 --port 8005 --workers 1 --no-access-log &
+echo $! >> "$PID_FILE"
+
 # Wait for servers to start
 echo ""
 echo -e "${YELLOW}Waiting for servers to start...${NC}"
@@ -89,6 +94,7 @@ check_server "FastAPI" 8001 "" || all_ok=false
 check_server "Litestar" 8002 "" || all_ok=false
 check_server "Django Ninja" 8003 "/ninja" || all_ok=false
 check_server "Django Bolt" 8004 "" || all_ok=false
+check_server "Django DRF" 8005 "/drf" || all_ok=false
 
 if [ "$all_ok" = false ]; then
     echo ""
