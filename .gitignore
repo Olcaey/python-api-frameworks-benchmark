@@ -1,0 +1,18 @@
+# Python caches
+__pycache__/
+*.pyc
+
+# Local envs and tooling
+.venv/
+.venv-graphene-v2/
+.idea/
+
+# Benchmark logs
+.benchmark_logs/
+
+# OS files
+.DS_Store
+
+# Local databases
+benchmark.db
+django_benchmark.db

@@ -4,7 +4,7 @@
 
 set -e
 
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 
 echo "=== Framework Benchmark Setup ==="
 echo ""
@@ -78,8 +78,8 @@ else:
 session.close()
 "
 
-# Make run scripts executable
-chmod +x run_*.sh
+# Make scripts executable
+chmod +x scripts/*.sh
 
 echo ""
 echo "=== Setup Complete ==="
@@ -87,13 +87,13 @@ echo ""
 echo "To run benchmarks:"
 echo ""
 echo "1. Start servers in separate terminals:"
-echo "   ./run_fastapi.sh   # Port 8001"
-echo "   ./run_litestar.sh  # Port 8002"
-echo "   ./run_ninja.sh     # Port 8003"
-echo "   ./run_bolt.sh      # Port 8004"
+echo "   ./scripts/run_fastapi.sh   # Port 8001"
+echo "   ./scripts/run_litestar.sh  # Port 8002"
+echo "   ./scripts/run_ninja.sh     # Port 8003"
+echo "   ./scripts/run_bolt.sh      # Port 8004"
 echo ""
 echo "2. Run benchmark:"
 echo "   uv run python bench.py"
 echo ""
 echo "Or use the all-in-one script:"
-echo "   ./run_all.sh"
+echo "   ./scripts/run_all.sh"
