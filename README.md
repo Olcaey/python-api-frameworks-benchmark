@@ -40,6 +40,8 @@ REST:
 | `/json-10k` | Returns ~10KB JSON response   |
 | `/db`       | 10 reads from SQLite database |
 | `/slow`     | Mock API with 2 second delay  |
+| `/nplus1`   | Batch-loaded related data     |
+| `/mutate`   | Mutation (write) test         |
 
 GraphQL (POST `/graphql`):
 
